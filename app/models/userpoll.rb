@@ -1,0 +1,2 @@
+class Userpoll < ApplicationRecord
+end
