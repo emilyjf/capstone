@@ -1,7 +1,16 @@
-<h1>Edit Profile</h1>
 
-<%= form_tag "/users/#{@user.id}", method: :patch do %>
-  <div>
-    Email: <input type="text" name="email" value="<%= @user.email %>">
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="product-single">
+        <h1>Edit Profile</h1>
+        <%= form_tag "/users/#{@user.id}", method: :patch do %>
+          <div class="form-group">
+            Email: <input type="text" name="email" value="<%= @user.email %>">
+          </div>
+          <input type="submit" value="Update profile">
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</section>

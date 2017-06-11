@@ -1,5 +1,10 @@
-<h2> <%= @user.email %></h2>
-
-<h4><%= link_to "Edit User", "/users/#{ @user.id }/edit" %></h4>
-<h4><%= link_to "Delete", "/users/#{ @user.id }", method: :delete %></h4>
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="product_single row">
+        <h2> <%= @user.email %></h2>
+      </div>
+    </div>
+  </div>
+</section>
 
