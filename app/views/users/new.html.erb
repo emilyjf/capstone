@@ -1,10 +1,13 @@
 <section>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
-        <div class="product_single">
+        <div class="user_single">
           <h1>Sign Up</h1>
             <%= form_tag '/users', method: :post do %>
             <div class="form-group">
+              <%= label_tag :name %>
+              <%= text_field_tag :name, nil, class: "form-control" %>            
+              <div class="form-group">
               <%= label_tag :email %>
               <%= email_field_tag :email, nil, class: "form-control" %>
             </div>

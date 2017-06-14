@@ -3,5 +3,5 @@ class Poll < ApplicationRecord
   has_many :userpolls
   has_many :appts
 
-  validates :
+  #validates :
 end
