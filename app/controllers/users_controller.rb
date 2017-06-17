@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  def index
+    @users = current_user
+  end
+
   def new
 
   end
@@ -14,7 +19,7 @@ class UsersController < ApplicationController
     if user.save
       session[:user_id] = user.id
       flash[:success] = "Account created."
-      redirect_to "/"
+      redirect_to user_url(id: user.id)
     else
       flash[:warning] = "Invalid email or password."
       redirect_to "/"

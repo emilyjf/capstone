@@ -1,0 +1,14 @@
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="appt_single">
+        <h1>Choose Possible Meeting Times</h1>
+          <%= form_tag '/appts', method: :post do %>
+          <div class="form-group">
+            <%= label_tag :appt %>
+            <%= text_field_tag :appt, nil, class: "form-control" %>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
