@@ -22,7 +22,7 @@ class PollsController < ApplicationController
       current_user.polls << @poll
       #current_user.save
       flash[:success] = "Poll created."
-      redirect_to poll_url(@poll.id)
+      redirect_to appts_url(@poll.id)
     else
       render 'new.html.erb'
     end
@@ -46,14 +46,14 @@ class PollsController < ApplicationController
                           location: params[:location]
                           )
     poll.save
-    flash[:success] = "Poll updated."
+    flash[:success] = "Meeting updated."
     redirect_to "/polls/#{poll.id}"
   end
 
   def destroy
     poll = Poll.find(params[:id])
     poll.destroy
-    flash[:warning] = "Poll deleted."
-    redirect_to "/"
+    flash[:warning] = "Meeting deleted."
+    redirect_to "/polls"
   end
 end

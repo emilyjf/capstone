@@ -2,15 +2,14 @@
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       <div class="poll_single">
-        <h3>Looking good! We've got your meeting set up and are sending emails to your invitees now.</h3>
+      <div>
+      <h1>Your meeting is set. We'll send emails to your invitees.</h1>
       </div>
-      <h3> 
-        Ready for another meeting? <%= link_to "Create meeting", new_poll_url , class: "btn btn-primary" %>
-      </h3>
-      <h3> 
-        <%= link_to "Home", polls_url , class: "btn btn-primary" %>
-      </h3>
-      <h3> 
+      <div>
+      <h3>Ready for another meeting? <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></h3>
+      </div>
+      <%= link_to "Home", polls_url, class: "btn btn-primary" %>
+     </div>
     </div>
   </div>
 </section>

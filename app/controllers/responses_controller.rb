@@ -1,4 +1,10 @@
 class ResponsesController < ApplicationController
+  before_action :authenticate_user!
+
+  def new
+    @response = Response.new
+  end
+  
   def create
     @response = Response.new(
                             user_id: params[:user][:user_id],
