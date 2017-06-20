@@ -3,7 +3,7 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div class="poll_single">
       <h1>Choose Meeting Time(s)</h1>
-      <h2>Enter a single date for a meeting, or select several dates from which your invitees can choose.</h2>
+      <h2>Enter a date for a meeting, or select dates from which your invitees can choose.</h2>
         <%= form_tag '/appts', method: :post do %>
           <div class="form-group">
             <%= label_tag :date_1 %>
@@ -37,8 +37,10 @@
             <%= label_tag :time_4 %>
             <%= time_field :task, :started_at %>
           </div>
-            <%= submit_tag "Save Meeting & Send Invites", class: "btn btn-success" %>
+          <br>
+            <%= submit_tag "Save & Send Invites", class: "btn btn-success" %>
           <% end %>
+          </br>
         </div>
       </div>
     </div>

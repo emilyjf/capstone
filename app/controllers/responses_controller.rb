@@ -27,7 +27,7 @@ class ResponsesController < ApplicationController
     response = Response.find(params[:id])
     response.assign_attributes(
                               user_id: params[:user][:user_id],
-                              time_id: params[:time_id]
+                              appt_id: params[:appt_id]
                               )
     response.save
     flash[:success] = "Response updated."

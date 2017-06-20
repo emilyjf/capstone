@@ -4,7 +4,7 @@
     Aw, bummer! You have no meetings created yet. <%= link_to "Create meeting", new_poll_url %>
   </p>
 <% end %>
-<h1> Created Meetings </h1>
+<h2> Created Meetings </h2>
 <% @polls.each do |poll| %>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
@@ -16,7 +16,7 @@
   </div>
 <% end %>
 
-<h1> Your Responses </h1>
+<h2> Your Responses </h2>
 <% @responses.each do |response| %>
 <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
@@ -27,4 +27,10 @@
     </div>
   </div>
 <% end %>
+<br>
+<%= link_to "Edit meeting", @polls_edit, class: "btn btn-primary" %>
+</br>
+<br>
+<%= link_to "Edit response", @responses_url, class: "btn btn-primary" %>
+</br>
 </section>
