@@ -39,7 +39,6 @@ class PollsController < ApplicationController
   def update
     poll = Poll.find(params[:id])
     poll.assign_attributes(
-                          admin_id: params[:admin][:admin_id],
                           title: params[:title],
                           status: params[:status],
                           invitee: params[:invitee],
