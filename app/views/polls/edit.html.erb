@@ -22,15 +22,15 @@
           <div class="form-group">
           Status: <input type="text" name="status" value="<%= @poll.status %>">
           </div>
-          <input type="submit" value="Update meeting">
         <% end %>
+          <input type="submit" value="Save Changes">  
+            <% if @poll.user.id == current_user.id %>
+              <%= link_to "Delete", "/polls/#{@poll.id}", {method: :delete,  class: "btn btn-danger" }%>
+            <% end %>
       </div>
     </div>
   </div>
 </section>
   
      
-
-
-          
 

@@ -3,5 +3,8 @@ class Poll < ApplicationRecord
   has_many :userpolls
   has_many :appts
 
-  #validates :
+  # validates :title, presence: true
+  # validates :status, presence: true
+  # validates :invitee, presence: true
+  # validates :location, presence: true
 end
