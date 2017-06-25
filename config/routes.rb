@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :polls
 
-  get '/appts' => 'appts#new'
+  get '/appts/:poll_id' => 'appts#new'
   post '/appts' => 'appts#create'
 
   post '/responses' => 'responses#create'

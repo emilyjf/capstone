@@ -5,6 +5,7 @@
       <h1>Choose Meeting Time(s)</h1>
       <h2>Enter a date for a meeting, or select dates from which your invitees can choose.</h2>
         <%= form_tag '/appts', method: :post do %>
+          <% hidden_field_tag :poll_id, params[:poll_id] %>
           <div class="form-group">
             <%= label_tag :date_1 %>
             <%= date_field :poll_day_month, nil, class: "form-control" %>

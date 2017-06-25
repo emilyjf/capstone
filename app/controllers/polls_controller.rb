@@ -22,7 +22,7 @@ class PollsController < ApplicationController
       current_user.polls << @poll
       #current_user.save
       flash[:success] = "Meeting created."
-      redirect_to appts_url(@poll.id)
+      redirect_to "/appts/#{@poll.id}"
     else
       render 'new.html.erb'
     end

@@ -10,12 +10,24 @@ class ApptsController < ApplicationController
                     scheduled_slot: params[:scheduled_slot],
                     poll_id: params[:poll_id]
                     )
+    p "im here"
+    p params[:poll_id]
     if appt.save
-      current_user.appt << @appt
-      flash[:success] = "Meeting saved."
-      redirect_to polls_url(id: user.id)
+      response = Response.new(
+                              appt_id: appt.id,
+                              user_id: current_user.id,
+                              )
+      if response.save
+
+      else
+        p "QQQQQQQQQQQ"
+        p response.errors
+      end
     else
-      redirect_to "/polls"
+      p "vgvghvhgvhgvghvhg"
+      p appt.errors
+      flash[:success] = "Meeting saved."
+      redirect_to "/polls/#{appt.poll_id}"
     end
   end
 end
