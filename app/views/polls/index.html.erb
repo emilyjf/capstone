@@ -1,29 +1,38 @@
 <section>
+<div>
 <% if @polls.empty? %>
-  <p>
-    Aw, bummer! You have no meetings created yet. <%= link_to "Create meeting", new_poll_url %>
-  </p>
-<% end %>
+<div class="col-md-8">
+      <h4>
+        Aw, bummer! You have no meetings created yet. <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %>
+      </h4>
+    <% end %>
+  </div>
+</div>
+
+<div class="col-md-6">
 <h2> Created Meetings </h2>
+<ul>
 <% @polls.each do |poll| %>
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+  <div class="column">
       <div class="poll_many">
         <h2><%= poll.title %></h2>
         <h2><%= poll.id %></h2>
+        </ul>
         <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary" %>
       </div>
     </div>
   </div>
 <% end %>
 
+<div class="col-md-6">
 <h2> Your Responses </h2>
+<ul>
 <% @responses.each do |response| %>
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+<div class="column">
       <div class="poll_many">
         <h2> <%= response.id %></h2>
         <h2> <%= response.title %></h2>
+      </div>ul>
         <%= link_to "Edit response", edit_response_url(response), class: "btn btn-primary" %>
       </div>
     </div>
