@@ -15,10 +15,13 @@
 <% @polls.each do |poll| %>
   <div class="column">
       <div class="poll_many">
-        <h2><%= poll.title %></h2>
+        <h2><%= link_to(poll.title, "/polls/#{poll.id}") %></h2>
         <h2><%= poll.id %></h2>
         </ul>
         <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary" %>
+        <% if poll.user.id == current_user.id %>
+          <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>

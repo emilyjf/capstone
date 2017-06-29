@@ -8,8 +8,14 @@
       <div>
       <h3>Ready for another meeting? <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></h3>
       </div>
-      <%= link_to "Home", polls_url, class: "btn btn-primary" %>
-     </div>
+        <%= link_to "Home", polls_url, class: "btn btn-primary" %>
+        <!-- <div>
+          <h3>Finalize meeting time <%= link_to "Finalize meeting", poll_url, class: "btn btn-primary" %></h3>
+        </div> -->
+        <% if @poll.user.id == current_user.id %>
+          <%= link_to "Finalize", "/polls/#{@poll.id}/finalize", class: "btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </section>

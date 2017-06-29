@@ -7,26 +7,25 @@
           <div class="form-group">
           Title: <input type="text" name="title" value="<%= @poll.title %>">
           </div>
-        <% end %>
-        <%= form_tag "/polls/#{@poll.id}", method: :patch do %>
+        
           <div class="form-group">
           Location: <input type="text" name="location" value="<%= @poll.location %>">
           </div>
-        <% end %>
-        <%= form_tag "/polls/#{@poll.id}", method: :patch do %>
+        
           <div class="form-group">
           Invitees: <input type="text" name="email" value="<%= @poll.user.email %>">
           </div>
-        <% end %>
-        <%= form_tag "/polls/#{@poll.id}", method: :patch do %>
+        
           <div class="form-group">
           Status: <input type="text" name="status" value="<%= @poll.status %>">
           </div>
-        <% end %>
+
           <input type="submit" value="Save Changes">  
             <% if @poll.user.id == current_user.id %>
               <%= link_to "Delete", "/polls/#{@poll.id}", {method: :delete,  class: "btn btn-danger" }%>
             <% end %>
+        <% end %>
+
       </div>
     </div>
   </div>

@@ -2,6 +2,7 @@ class ApptsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    @poll = Polls.find(params[:poll_id])
     @appt = Appt.new
   end
 
@@ -10,7 +11,6 @@ class ApptsController < ApplicationController
                     scheduled_slot: params[:scheduled_slot],
                     poll_id: params[:poll_id]
                     )
-    p "im here"
     p params[:poll_id]
     if appt.save
       response = Response.new(
@@ -20,11 +20,11 @@ class ApptsController < ApplicationController
       if response.save
 
       else
-        p "QQQQQQQQQQQ"
+        p "Our apologies. Something is awry."
         p response.errors
       end
     else
-      p "vgvghvhgvhgvghvhg"
+      p "Oops. We're sorry; something has gone terribly wrong."
       p appt.errors
       flash[:success] = "Meeting saved."
       redirect_to "/polls/#{appt.poll_id}"
