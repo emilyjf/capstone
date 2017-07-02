@@ -25,5 +25,6 @@ Rails.application.routes.draw do
 
   post '/userpolls' => 'userpolls#create'
 
-  get '/layouts' => 'layouts#show'
+  get '/pages' => 'pages#show' 
+  get '/pages' => 'pages#index'
 end
