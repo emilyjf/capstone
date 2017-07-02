@@ -51,24 +51,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+
                 <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
                 <a class="navbar-brand" href="index.html">MeetMe</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meetings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/polls">Your meetings</a></li>
+                        <li><a href="/polls/new">New meeting</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                      <a href="<!-- about.html.erb -->">About</a>
+                  </li>
+                  <li>
+                      <a href="https://medium.com/@candycoder">Blog</a>
+                  </li>
+                  <li>
+                      <a href="contact.html">Contact</a>
+                  </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -92,7 +97,7 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive img-full" src="/img/slide-1.jpg" alt="">
+                                <img class="img-responsive img-full" src="/images/meeting1.jpg" alt="">
                             </div>
                             <div class="item">
                                 <img class="img-responsive img-full" src="/img/slide-2.jpg" alt="">
@@ -113,13 +118,13 @@
                     <h2 class="brand-before">
                         <small>Welcome to</small>
                     </h2>
-                    <h1 class="brand-name">MeetMe</h1>
+                    <h2 class="brand-name">MeetMe</h2>
                     <hr class="tagline-divider">
-                    <h2>
+                    <h3>
                         <small>By
                             <strong>Emily Flanagan</strong>
                         </small>
-                    </h2>
+                    </h3>
                 </div>
             </div>
         </div>

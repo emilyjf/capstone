@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   patch '/responses' => 'responses#update'
 
   post '/userpolls' => 'userpolls#create'
+
+  get '/layouts' => 'layouts#show'
 end

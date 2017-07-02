@@ -2,7 +2,7 @@ class ApptsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @poll = Polls.find(params[:poll_id])
+    @poll = Poll.find(params[:poll_id])
     @appt = Appt.new
   end
 
