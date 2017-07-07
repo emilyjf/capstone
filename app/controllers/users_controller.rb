@@ -17,6 +17,9 @@ class UsersController < ApplicationController
                     )
 
     if user.save
+      # Tell the UserMailer to send a welcome email after save
+      UserMailer.welcome_email(user).deliver_later
+
       session[:user_id] = user.id
       flash[:success] = "Account created."
       redirect_to user_url(id: user.id)
