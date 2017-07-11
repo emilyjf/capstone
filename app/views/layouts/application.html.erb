@@ -92,6 +92,8 @@
         </div>
         <!-- /.container -->
     </nav>
+    
+    
     <div class="container">
         <div class="row">
             <div class="box">
@@ -140,6 +142,13 @@
         <div class="row">
             <div class="box">
                 <div class="col-lg-12">
+
+                      <% flash.each do |name, message| %>
+                        <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <%= message %>
+                        </div>
+                      <% end %>
                   <%= yield %>
                 </div>
             </div>

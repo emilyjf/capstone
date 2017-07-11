@@ -31,7 +31,16 @@ Rails.application.configure do
   config.assets.compile = false
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
+config.action_mailer.delivery_method = :smtp
 
+config.action_mailer.smtp_settings = {
+                                      :address => "smtp.gmail.com",
+                                      :port => 587,
+                                      :user_name => ENV['gmail_username'],
+                                      :password => ENV['gmail_password'],
+                                      :authentication => "plain",
+                                      :enable_startls_auto => true
+                                      }
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 

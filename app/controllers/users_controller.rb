@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
     if user.save
       # Tell the UserMailer to send a welcome email after save
-      UserMailer.welcome_email(user).deliver_later
+      UserMailer.welcome_email(user).deliver_now
 
       session[:user_id] = user.id
       flash[:success] = "Account created."
