@@ -14,18 +14,21 @@ class PollsController < ApplicationController
     @poll = Poll.new(
                     admin_id: current_user.id,
                     title: params[:title],
-                    status: params[:status],
+                    status: "In progress",
                     invitee: params[:invitee],
-                    location: params[:location]
+                    address: params[:address],
+                    city: params[:city],
+                    state: params[:state]
                     )
     if @poll.save
       current_user.polls << @poll
       #current_user.save
       # we have poll.id here to send to email
       # put in email method here, passing in poll.id
-      flash[:success] = "Meeting created."
-      redirect_to "/appts/#{@poll.id}"
+      flash[:success] = "Your meeting is set. We'll send emails to your invitees."
+      redirect_to "/polls/#{@poll.id}"
     else
+      flash[:warning] = "Unable to save."
       render 'new.html.erb'
     end
   end
@@ -48,10 +51,12 @@ class PollsController < ApplicationController
                           title: params[:title],
                           status: params[:status],
                           invitee: params[:invitee],
-                          location: params[:location]
+                          address: params[:address],
+                          city: params[:city],
+                          state: params[:state]
                           )
     poll.save
-    flash[:success] = "Meeting updated."
+    flash[:success] = "Changes successfully saved."
     redirect_to "/polls/#{poll.id}"
   end
 

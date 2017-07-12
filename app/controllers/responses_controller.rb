@@ -1,14 +1,14 @@
 class ResponsesController < ApplicationController
   before_action :authenticate_user!
-
+  protect_from_forgery except: :create
   
-<section>
-  <% if @responses.empty? %>
-    <p>
-      Looks like you have not responded to any meeting invites. <% redirect_to "/" unless current_user && current_user.admin %>
-    </p>
-  <% end %>
-</section>
+#<section>
+#  <% if @responses.empty? %>
+#    <p>
+#      Looks like you have not responded to any meeting invites. <% redirect_to "/" unless #current_user && current_user.admin %>
+#    </p>
+#  <% end %>
+#</section>
 
   def new
     @response = Response.new

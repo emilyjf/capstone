@@ -11,15 +11,15 @@
 <br>
   <h3>MeetMe Poll</h3>
 </br>
-      <%= form_tag '/polls/:poll_id/users', method: :post do %>
+      <%= form_tag '/responses', method: :post do %>
       <div>
 
-      <%= link_to "create", "/responses/#{ response.id }", method: :create %>
+      <%= link_to "create", "/responses", method: :create %>
         <select name="Meeting Option 1">
-          <%= @appt.date_1 %>
-          <%= @appt.poll_day_month %>
-          <%= @appt.time_1 %>
-          <%= @appt.task, @appt.started_at %>
+          <%#= @appt.date_1 %>
+          <%#= @appt.poll_day_month %>
+          <%#= @appt.time_1 %>
+          <%#= @appt.task, @appt.started_at %>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
           <option value="Maybe">Maybe</option>
@@ -28,10 +28,10 @@
         
       <div>
         <select name="Meeting Option 2">
-          <%= @appt.date_2 %>
-          <%= @appt.poll_day_month %>
-          <%= @appt.time_2 %>
-          <%= @appt.task, @appt.started_at %>
+          <%#= @appt.date_2 %>
+          <%#= @appt.poll_day_month %>
+          <%#= @appt.time_2 %>
+          <%#= @appt.task, @appt.started_at %>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
           <option value="Maybe">Maybe</option>
@@ -40,10 +40,10 @@
         
       <div>
         <select name="Meeting Option 3">
-          <%= @appt.date_3 %>
-          <%= @appt.poll_day_month %>
-          <%= @appt.time_3 %>
-          <%= @appt.task, @appt.started_at %>
+          <%#= @appt.date_3 %>
+          <%#= @appt.poll_day_month %>
+          <%#= @appt.time_3 %>
+          <%#= @appt.task, @appt.started_at %>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
           <option value="Maybe">Maybe</option>

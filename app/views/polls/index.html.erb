@@ -11,8 +11,10 @@
   <h2> Created Meetings </h2>
         <% @polls.each do |poll| %>
           <ul>
-            <li><h2><%= link_to(poll.title, "/polls/#{poll.id}") %></h2></li>
-            <li><h2><%= poll.id %></h2></li>
+          <li><h2><%= link_to poll.title, "/polls/#{poll.id}" %></h2></li>
+     
+            <!-- <li><h2><%= poll.id %></h2></li> -->
+            <li><h2><%= poll.status %></h2></li>
           </ul>
           <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary" %>
           <% if poll.user.id == current_user.id %>

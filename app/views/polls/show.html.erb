@@ -1,9 +1,19 @@
 <section>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="poll_single">
+      <div class="poll_single"><div>
+
+      </div>
       <div>
-      <h4>Your meeting is set. We'll send emails to your invitees.</h4>
+      <h2>Meeting Details</h2>
+      Title: <%= @poll.title %>
+      <p>Address</p>
+      <%= @poll.address %>
+      <p>City</p>
+      <%= @poll.city %>
+      <p>State</p>
+      <%= @poll.state %>
+  <!--     <%= @poll.invitee %> -->
       </div>
       <div>
       <h4>Ready for another meeting? <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></h4>

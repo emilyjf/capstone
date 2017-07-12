@@ -9,27 +9,35 @@
           </div>
         
           <div class="form-group">
-          Location: <input type="text" name="location" value="<%= @poll.location %>">
+            <%= label_tag :address %>
+            <%= text_field_tag :address, @poll.address, class: "form-control" %>
           </div>
-        
+          <div class="form-group">
+            <%= label_tag :city %>
+            <%= text_field_tag :city, @poll.city, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= label_tag :state %>
+            <%= select_tag :state, options_for_select(states_list, @poll.state) %>
+          </div>
           <div class="form-group">
           Invitees: <input type="text" name="email" value="<%= @poll.user.email %>">
           </div>
-        
           <div class="form-group">
           Status: <input type="text" name="status" value="<%= @poll.status %>">
           </div>
-
-          <input type="submit" value="Save Changes">  
+          <%= submit_tag "Save Changes", class: "btn btn-primary" %>
+          
+         <!--  <input type="submit" value="Save Changes">  --> 
             <% if @poll.user.id == current_user.id %>
               <%= link_to "Delete", "/polls/#{@poll.id}", {method: :delete,  class: "btn btn-danger" }%>
             <% end %>
         <% end %>
-
       </div>
     </div>
   </div>
 </section>
-  
+
+
      
 

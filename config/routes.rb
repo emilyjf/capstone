@@ -15,9 +15,12 @@ Rails.application.routes.draw do
   end
 
   get '/polls/:poll_id/users' => 'polls#edit'
+  post '/polls/:poll_id' => 'polls#create'
+  patch '/polls/:poll_id/users' => 'polls#update'
 
   get '/appts/:poll_id' => 'appts#new'
   post '/appts' => 'appts#create'
+  patch '/appts/:poll_id' => 'appts#create'
 
   post '/responses' => 'responses#create'
   get '/responses' => 'responses#edit'

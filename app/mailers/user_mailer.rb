@@ -7,8 +7,9 @@ class UserMailer < ApplicationMailer
     mail(to: 'calimeetme@gmail.com', subject: 'Welcome to MeetMe')
   end
 
-  def poll_email(user)
+  def poll_email(user, poll)
     @user = user
+    @poll = poll
     mail(to: 'calimeetme@gmail.com', subject: "You've Been Invited!")
   end
 end
