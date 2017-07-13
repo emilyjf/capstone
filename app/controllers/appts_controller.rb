@@ -9,6 +9,9 @@ class ApptsController < ApplicationController
   def create
     appt = Appt.new(
                     scheduled_slot: params[:scheduled_slot],
+                    scheduled_slot2: params[:scheduled_slot2],
+                    scheduled_slot3: params[:scheduled_slot3],
+                    scheduled_slot4: params[:scheduled_slot4],
                     poll_id: params[:poll_id]
                     )
     p params[:poll_id]

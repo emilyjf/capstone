@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>You've been invited to an event through MeetMe.com, <%= @user.name %>.</h1>
+    <p>As a friendly reminder, your username is: <%#= @user.email %>.<br></p>
+   <!--  <p>To login to the site, click here: <%= @url %>.</p> -->
+    <p>Click here to respond to your MeetMe.com invite.</p>
+<br>
+  <h3>MeetMe Poll</h3>
+</br>
+      <%= form_tag '/responses', method: :post do %>
+      <div>
+
+      <%= link_to "create", "/responses", method: :create %>
+        <div>
+          <%= @poll.appts.first.scheduled_slot %>
+          <select name="Meeting Option 1">
+            <%#= @appt.poll_day_month %>
+            <%#= @appt.time_1 %>
+            <%#= @appt.task, @appt.started_at %>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+            <option value="Maybe">Maybe</option>
+          </select>
+        </div>
+      </div>
+        
+      <h2>Meeting Details</h2>
+      Title: <%= @poll.title %>
+      <p>Address</p>
+      <%= @poll.address %>
+      <p>City</p>
+      <%= @poll.city %>
+      <p>State</p>
+      <%= @poll.state %>
+
+
+
+      <div>
+        <select name="Meeting Option 2">
+          <%#= @appt.date_2 %>
+          <%#= @appt.poll_day_month %>
+          <%#= @appt.time_2 %>
+          <%#= @appt.task, @appt.started_at %>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Maybe">Maybe</option>
+        </select>
+      </div>
+        
+      <div>
+        <select name="Meeting Option 3">
+          <%#= @appt.date_3 %>
+          <%#= @appt.poll_day_month %>
+          <%#= @appt.time_3 %>
+          <%#= @appt.task, @appt.started_at %>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          <option value="Maybe">Maybe</option>
+        </select>
+      </div>
+
+        <%= submit_tag "Save" %>
+      <% end %>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

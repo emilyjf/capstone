@@ -1,0 +1,20 @@
+<section>
+  <h2> Your Invite Responses </h2>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="response-single">
+        <h1>Edit Response</h1>
+        <%= form_tag "/responses/#{@response.id}", method: :patch do %>
+          <div class="form-group">
+            Response: <input type="text" name="response" value="<%= @current_user.responses %>">
+          </div>
+          <input type="submit" value="Edit response">
+        <% end %>
+        <% if response.id == current_user.id %>
+          <%= link_to "Edit Response", response_url(response), method: :update, class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -22,12 +22,18 @@ Rails.application.routes.draw do
   post '/appts' => 'appts#create'
   patch '/appts/:poll_id' => 'appts#create'
 
+  get '/responses' => 'responses#index'
+  get '/responses/new' => 'responses#new'
   post '/responses' => 'responses#create'
-  get '/responses' => 'responses#edit'
-  patch '/responses' => 'responses#update'
+  get '/responses/:id' => 'responses#show'
+  get '/responses/:id/edit' => 'responses#edit'
+  patch '/responses/:id' => 'responses#update'
+  delete '/responses/:id' => 'responses#destroy'
 
   post '/userpolls' => 'userpolls#create'
 
   get '/pages' => 'pages#index'
   get '/pages/:id' => 'pages#show' 
+
+  get '/mailers/:id' => 'mailers#show'
 end

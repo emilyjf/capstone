@@ -16,8 +16,8 @@ class ResponsesController < ApplicationController
   
   def create
     @response = Response.new(
-                            user_id: params[:user][:user_id],
-                            time_id: params[:time_id]
+                            user_id: current_user.id,
+                            appt_id: params[:appt_id]
                             )
     if @response.save
       current_user.response << @response

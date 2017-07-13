@@ -26,7 +26,7 @@ class PollsController < ApplicationController
       # we have poll.id here to send to email
       # put in email method here, passing in poll.id
       flash[:success] = "Your meeting is set. We'll send emails to your invitees."
-      redirect_to "/polls/#{@poll.id}"
+      redirect_to "/appts/#{@poll.id}"
     else
       flash[:warning] = "Unable to save."
       render 'new.html.erb'
