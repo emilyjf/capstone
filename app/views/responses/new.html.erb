@@ -10,9 +10,6 @@
           </div>
           <input type="submit" value="Edit response">
         <% end %>
-        <% if response.id == current_user.id %>
-          <%= link_to "Edit Response", response_url(response), method: :update, class: "btn btn-primary" %>
-        <% end %>
       </div>
     </div>
   </div>
