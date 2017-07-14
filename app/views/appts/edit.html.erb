@@ -1,0 +1,41 @@
+<h1>Appts Edit</h1>
+
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="poll_single">
+      <h1>Edit Meeting Time(s)</h1>
+        <%= form_tag '/appts', method: :patch do %>
+          <% hidden_field_tag :poll_id, params[:poll_id] %>
+          <div class="form-group">
+            <%= label_tag :date_1 %>
+            <%= date_field :scheduled_slot, @appt.scheduled_slot, class: "form-control" %>
+          </div>
+          <div>
+            <%= label_tag :time_1 %>
+            <%= time_field :task, :started_at %>
+          </div>
+           <div class="form-group">
+            <%= label_tag :date_2 %>
+            <%= date_field :scheduled_slot2, @appt.scheduled_slot2, class: "form-control" %>
+          </div>
+          <div>
+            <%= label_tag :time_2 %>
+            <%= time_field :task, :started_at %>
+          </div>
+           <div class="form-group">
+            <%= label_tag :date_3 %>
+            <%= date_field :scheduled_slot3, @appt.scheduled_slot3, class: "form-control" %>
+          </div>
+          <div>
+            <%= label_tag :time_3 %>
+            <%= time_field :task, :started_at %>
+          </div>
+          <br>
+            <%= submit_tag "Save updated times.", class: "btn btn-success" %>
+          <% end %>
+          </br>
+        </div>
+      </div>
+    </div>
+</section>

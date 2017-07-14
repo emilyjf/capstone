@@ -16,16 +16,19 @@ class PollsController < ApplicationController
                     title: params[:title],
                     status: "In progress",
                     invitee: params[:invitee],
+                    invitee2: params[:invitee2],
+                    invitee3: params[:invitee3],
+                    invitee4: params[:invitee4],
                     address: params[:address],
                     city: params[:city],
-                    state: params[:state]
+                    state: params[:state],
+                    appt_id: params[:appt_id]
                     )
     if @poll.save
       current_user.polls << @poll
       #current_user.save
       # we have poll.id here to send to email
       # put in email method here, passing in poll.id
-      flash[:success] = "Your meeting is set. We'll send emails to your invitees."
       redirect_to "/appts/#{@poll.id}"
     else
       flash[:warning] = "Unable to save."
@@ -48,12 +51,17 @@ class PollsController < ApplicationController
   def update
     poll = Poll.find(params[:id])
     poll.assign_attributes(
+                          admin_id: current_user.id,
                           title: params[:title],
-                          status: params[:status],
+                          status: "In progress",
                           invitee: params[:invitee],
+                          invitee2: params[:invitee2],
+                          invitee3: params[:invitee3],
+                          invitee4: params[:invitee4],
                           address: params[:address],
                           city: params[:city],
-                          state: params[:state]
+                          state: params[:state],
+                          appt_id: params[:appt_id]
                           )
     poll.save
     flash[:success] = "Changes successfully saved."

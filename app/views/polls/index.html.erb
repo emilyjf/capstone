@@ -5,16 +5,15 @@
         <h4>Aw, bummer! You have no meetings created yet. <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></h4>
       <% end %>
     </div>
- 
 
   <div class="column-left">
   <h2> Created Meetings </h2>
         <% @polls.each do |poll| %>
-          <ul>
-          <li><h2><%= link_to poll.title, "/polls/#{poll.id}" %></h2></li>
-     
-            <!-- <li><h2><%= poll.id %></h2></li> -->
-            <li><h2><%= poll.status %></h2></li>
+          <ul style="list-style-type:none">
+              <li><h2><%= link_to poll.title, "/polls/#{poll.id}" %></h2></li>
+       
+              <!-- <li><h2><%= poll.id %></h2></li> -->
+              <li><h2><%= poll.status %></h2></li>
           </ul>
           <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary" %>
           <% if poll.user.id == current_user.id %>
@@ -26,9 +25,9 @@
   <div class="column-right">
   <h2> Your Responses </h2>
     <% @responses.each do |response| %>
-        <ul>
-          <h2><%= response.id %></h2>
-          <h2><%= response.title %></h2>
+        <ul style="list-style-type:none">
+          <li><h2><%= response.id %></h2></li>
+          <li><h2><%= response.title %></h2></li>
         </ul>
         </div>
           <%= link_to "Edit response", edit_response_url(response), class: "btn btn-primary" %>

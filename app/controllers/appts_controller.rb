@@ -31,8 +31,33 @@ class ApptsController < ApplicationController
     else
       p "Oops. We're sorry; something has gone terribly wrong."
       p appt.errors
-      flash[:success] = "Meeting times saved. Emails are being sent to your invitees."
+      flash[:success] = "Your meeting is scheduled. We're sending emails to your invitees now."
       redirect_to "/polls/#{appt.poll_id}"
     end
   end
+
+  def show
+    @appt = Appt.find(params[:id])
+  end
+
+  def edit
+    @appt = Appt.find(params[:id])
+  end
+
+  def update
+     appt = Appt.update(
+                    scheduled_slot: params[:scheduled_slot],
+                    scheduled_slot2: params[:scheduled_slot2],
+                    scheduled_slot3: params[:scheduled_slot3],
+                    scheduled_slot4: params[:scheduled_slot4],
+                    poll_id: params[:poll_id]
+                    )
+    p params[:poll_id]
+    appt.save
+  end
+
+  # def destroy
+  #   appt = Appt.find(params[:id])
+  #   appt.destroy
+  #   flash[:warning] = Appointment deleted.
 end

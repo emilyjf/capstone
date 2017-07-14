@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/polls/:poll_id' => 'polls#create'
   patch '/polls/:poll_id/users' => 'polls#update'
 
+  resources :appts
   get '/appts/:poll_id' => 'appts#new'
   post '/appts' => 'appts#create'
   patch '/appts/:poll_id' => 'appts#create'
