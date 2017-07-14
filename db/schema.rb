@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713002314) do
+ActiveRecord::Schema.define(version: 20170714015534) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20170713002314) do
     t.string "scheduled_slot2"
     t.string "scheduled_slot3"
     t.string "scheduled_slot4"
+    t.string "chosen"
   end
 
   create_table "polls", force: :cascade do |t|
@@ -43,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170713002314) do
     t.integer "appt_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "answer"
+    t.integer "poll_response_id"
   end
 
   create_table "user_polls", force: :cascade do |t|

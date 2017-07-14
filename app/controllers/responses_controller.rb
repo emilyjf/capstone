@@ -1,6 +1,6 @@
 class ResponsesController < ApplicationController
   before_action :authenticate_user!
-  protect_from_forgery except: :create
+  # protect_from_forgery except: :create
   
 #<section>
 #  <% if @responses.empty? %>
@@ -9,6 +9,9 @@ class ResponsesController < ApplicationController
 #    </p>
 #  <% end %>
 #</section>
+  def index
+
+  end
 
   def new
     @response = Response.new
@@ -28,17 +31,24 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def show
+    @response = Response.find(params[:id])
+    @user = User.find(params[:id])
+  end
+
   def edit
     @response = Response.find(params[:id])
   end
 
   def update
     response = Response.find(params[:id])
-    response.assign_attributes(
-                              user_id: params[:user][:user_id],
-                              appt_id: params[:appt_id]
-                              )
-    response.save
+    # response.assign_attributes(
+    #                           user_id: params[:user][:user_id],
+    #                           appt_id: params[:appt_id]
+    #                           )
+
+    response.update!(answer: params[:answer])
+    
     flash[:success] = "Response updated."
     redirect_to "/responses/#{response.id}"
   end

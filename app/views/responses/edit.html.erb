@@ -1,5 +1,5 @@
 <section>
-<% if @responses.empty? %>
+<% if @response %>
   <p>
     Looks like you haven't responded to any meeting invites yet. 
   </p>
@@ -11,11 +11,11 @@
         <h1>Edit Response</h1>
         <%= form_tag "/responses/#{@response.id}", method: :patch do %>
           <div class="form-group">
-            Response: <input type="text" name="response" value="<%= @user.response %>">
+            Response: <input type="text" name="answer" value="<%= @response.answer %>">
           </div>
           <input type="submit" value="Edit response">
         <% end %>
-        <% if response.user.id == current_user.id %>
+        <% if @response.user.id == current_user.id %>
           <%= link_to "Edit Response", response_url(response), method: :update, class: "btn btn-primary" %>
         <% end %>
       </div>

@@ -21,6 +21,7 @@
             <%= select_tag :state, options_for_select(states_list, "IL") %>
           </div>
           <div class="form-group">
+            <%= hidden_field_tag :poll_response_id, @poll_response_id %>
             <%= label_tag :invitees %>
             <%= email_field_tag :email, nil, class: "form-control" %>
           </div>
