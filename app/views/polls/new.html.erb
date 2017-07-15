@@ -5,25 +5,25 @@
         <h1>Create a Meeting</h1>
           <%= form_tag '/polls', method: :post do %>
           <div class="form-group">
-            <%= label_tag :title %>
-            <%= text_field_tag :title, nil, class: "form-control" %>
+            <!-- # <%= label_tag :title %> -->
+          <p>Title <%= text_field_tag :title, nil, class: "form-control" %></p>
           </div>
           <div class="form-group">
-            <%= label_tag :address %>
-            <%= text_field_tag :address, nil, class: "form-control" %>
+            <!-- # <%= label_tag :address %> -->
+          <p>Address <%= text_field_tag :address, nil, class: "form-control" %></p>
           </div>
           <div class="form-group">
-            <%= label_tag :city %>
-            <%= text_field_tag :city, nil, class: "form-control" %>
+            <!-- # <%= label_tag :city %> -->
+          <p>City <%= text_field_tag :city, nil, class: "form-control" %></p>
           </div>
           <div class="form-group">
-            <%= label_tag :state %>
-            <%= select_tag :state, options_for_select(states_list, "IL") %>
+            <!-- # <%= label_tag :state %> -->
+          <p>State <%= select_tag :state, options_for_select(states_list, "IL") %></p>
           </div>
           <div class="form-group">
             <%= hidden_field_tag :poll_response_id, @poll_response_id %>
-            <%= label_tag :invitees %>
-            <%= email_field_tag :email, nil, class: "form-control" %>
+            <!-- # <%= label_tag :invitee_email %> -->
+          <p>Invitee Email <%= email_field_tag :email, nil, class: "form-control" %></p>
           </div>
             <%= submit_tag "Save", class: "btn btn-success" %>
         <% end %>

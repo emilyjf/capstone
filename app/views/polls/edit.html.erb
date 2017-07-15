@@ -5,28 +5,34 @@
         <h1>Edit Meeting</h1>
         <%= form_tag "/polls/#{@poll.id}", method: :patch do %>
           <div class="form-group">
-          Title: <input type="text" name="title" value="<%= @poll.title %>">
+          <p>Title: <input type="text" name="title" value="<%= @poll.title %>"></p>
           </div>
         
           <div class="form-group">
-            <%= label_tag :address %>
-            <%= text_field_tag :address, @poll.address, class: "form-control" %>
+          <!--   <%= label_tag :address %> -->
+          <p>Address: <%= text_field_tag :address, @poll.address, class: "form-control" %></p>
           </div>
           <div class="form-group">
-            <%= label_tag :city %>
-            <%= text_field_tag :city, @poll.city, class: "form-control" %>
+           <!--  # <%= label_tag :city %> -->
+          <p>City: <%= text_field_tag :city, @poll.city, class: "form-control" %></p>
           </div>
           <div class="form-group">
-            <%= label_tag :state %>
-            <%= select_tag :state, options_for_select(states_list, @poll.state) %>
+           <!--  <%= label_tag :state %> -->
+          <p>State: <%= select_tag :state, options_for_select(states_list, @poll.state) %></p>
           </div>
+          <!-- <div class="form-group">
+          Invitee Email: <input type="text" name="email" value="<%= @poll.user.email %>">
+          </div> -->
+
           <div class="form-group">
-          Invitees: <input type="text" name="email" value="<%= @poll.user.email %>">
+            <%= hidden_field_tag :poll_response_id, @poll_response_id %>
+            <!-- # <%= label_tag :invitee_email %> -->
+          <p>Invitee Email: <%= email_field_tag :email, @poll.user.email, class: "form-control" %></p>
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
           Status: <input type="text" name="status" value="<%= @poll.status %>">
-          </div>
-          <%= submit_tag "Save Changes", class: "btn btn-primary" %>
+          </div> -->
+          <%= submit_tag "Save Changes", class: "btn btn-success" %>
           
          <!--  <input type="submit" value="Save Changes">  --> 
             <% if @poll.user.id == current_user.id %>

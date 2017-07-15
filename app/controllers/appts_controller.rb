@@ -11,12 +11,13 @@ class ApptsController < ApplicationController
                     scheduled_slot2: params[:scheduled_slot2],
                     scheduled_slot3: params[:scheduled_slot3],
                     scheduled_slot4: params[:scheduled_slot4],
-                    poll_id: params[:poll_id]
+                    
+                    chosen: params[:chosen]
                     )
     p params[:poll_id]
-    if appt.save
+    if appt.save!
     # Tell the UserMailer to send an email about the poll after save
-    UserMailer.poll_email(user).deliver_now
+    # UserMailer.poll_email(user).deliver_now
       response = Response.new(
                               appt_id: appt.id,
                               user_id: current_user.id,
@@ -49,7 +50,8 @@ class ApptsController < ApplicationController
                     scheduled_slot2: params[:scheduled_slot2],
                     scheduled_slot3: params[:scheduled_slot3],
                     scheduled_slot4: params[:scheduled_slot4],
-                    poll_id: params[:poll_id]
+                    
+                    chosen: params[:chosen]
                     )
     p params[:poll_id]
     appt.save

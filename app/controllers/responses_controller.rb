@@ -20,7 +20,8 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(
                             user_id: current_user.id,
-                            appt_id: params[:appt_id]
+                            appt_id: params[:appt_id],
+                            answer: params[:answer]
                             )
     if @response.save
       current_user.response << @response
@@ -44,7 +45,8 @@ class ResponsesController < ApplicationController
     response = Response.find(params[:id])
     # response.assign_attributes(
     #                           user_id: params[:user][:user_id],
-    #                           appt_id: params[:appt_id]
+    #                           appt_id: params[:appt_id],
+                                 # answer: params[:answer]
     #                           )
 
     response.update!(answer: params[:answer])

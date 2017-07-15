@@ -168,9 +168,11 @@ footer p {
     }
 
     .nav>li>a {
-        padding: 35px;
+        top-padding: 5px;
+        bottom-padding: 5px;
     }
 
+  
     .navbar-nav>li>a {
         line-height: normal;
     }
