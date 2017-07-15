@@ -1,24 +1,38 @@
 body  {
-      font-family: Georgia,Times,"Times New Roman",serif;
+      
       background-image: url("sprinkles.png") ; background-size: cover;
       }
 
 .column-left {
               width: 45%;
               float: left;
-              padding: 50px;
+              padding-left: 15px;
+              padding-top: 20px;
+              padding-bottom: 20px;
               }
+
+.column-gap {
+            width: 10px;
+            }
 
 .column-right {
               width: 45%;
               float: right;
-              padding: 50px;
+              padding-right: 15px;
+              padding-top: 20px;
+              padding-bottom: 20px;
               }
 
 .poll_single {
               
 
               }
+
+.well {
+      height: 800px;
+      width: 500px;
+      
+      }
 
 
 
