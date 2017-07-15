@@ -6,25 +6,18 @@
       <% end %>
     </div>
 
-
-
-
-
-
   <div class="column-left">
     <div class="thumbnail well">
       <h2> Created Meetings </h2>
         <% @polls.each do |poll| %>
           <ul style="list-style-type:none">
-              <li><h2><%= link_to poll.title, "/polls/#{poll.id}" %></h2></li>
-       
-              <!-- <li><h2><%= poll.id %></h2></li> -->
-              <li><h4><%= poll.status %></h4></li>
+              <li><h3>                                                                                
+                <%= link_to poll.title, "/polls/#{poll.id}" %> <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary" %>
+                  <% if poll.user.id == current_user.id %><%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-danger" %></h3></li>
+                  <!-- <li><h5><%= poll.status %></h5></li> -->
+                <% end %>
           </ul>
-          <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary" %>
-          <% if poll.user.id == current_user.id %>
-            <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-primary" %>
-          <% end %>
+                    
         <% end %>
     </div>
   </div>
@@ -34,9 +27,9 @@
       <h2> Your Responses </h2>
         <% @responses.each do |response| %>
             <ul style="list-style-type:none">
-              <li><h2><%= response.id %></h2></li>
-              <li><h2><%= link_to poll.title, "/polls/#{poll.id}" %></h2></li>
-              <li><h2><%= response.answer %></h2></li>
+              <li><h3><%= response.id %></h3></li>
+              <li><h3><%= link_to poll.title, "/polls/#{poll.id}" %></h3></li>
+              <li><h3><%= response.answer %></h3></li>
             </ul>
             </div>
               <%= link_to "Edit response", edit_response_url(response), class: "btn btn-primary" %>
