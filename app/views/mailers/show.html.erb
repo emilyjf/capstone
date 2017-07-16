@@ -5,12 +5,17 @@
   </head>
   <div class="well">
   <body>
-    <h3>You've been invited to an event through MeetMe.com, <%= @user.name %>.</h3>
-   <!--  <p>To login to the site, click here: <%= @url %>.</p> -->
-    <p>Respond to your invite.</p>
-      <%= form_tag '/responses', method: :post do %>
+    <h2><strong>You've been invited to an event, <%= @user.name %>.</strong></h2>  
+      <h3><strong>Meeting Details</strong></h3>
+      <p>Title: <%= @poll.title %></p>
+      <p>Address: <%= @poll.address %></p>
+      <p>City: <%= @poll.city %></p>
+      <p>State: <%= @poll.state %></p>
+
       <div>
-      <%= link_to "create", "/responses", method: :create %>
+        <%= form_tag '/responses', method: :post do %>
+      <div>
+       <%#= link_to "create", "/responses", method: :create %>
         <div>
           <%= @poll.appts.first.scheduled_slot %>
           <select name="Meeting Option 1">
@@ -22,30 +27,25 @@
             <option value="Maybe">Maybe</option>
           </select>
         </div>
-      </div>
-        
-      <h3>Meeting Details</h3>
-      <p>Title: <%= @poll.title %></p>
-      <p>Address: <%= @poll.address %></p>
-      <p>City: <%= @poll.city %></p>
-      <p>State: <%= @poll.state %></p>
-
+      </div><br>
+      
       <div>
+        <%= @poll.appts.first.scheduled_slot %>
         <select name="Meeting Option 2">
           <%#= @appt.date_2 %>
           <%#= @appt.poll_day_month %>
           <%#= @appt.time_2 %>
           <%#= @appt.task, @appt.started_at %>
-          <%= @poll.appts.first.scheduled_slot2 %>
+          
           <option value="Yes">Yes</option>
           <option value="No">No</option>
           <option value="Maybe">Maybe</option>
         </select>
-      </div>
+      </div><br>
         
       <div>
+        <%= @poll.appts.last.scheduled_slot %>
         <select name="Meeting Option 3">
-         <%= @poll.appts.first.scheduled_slot3 %>
           <%#= @appt.date_3 %>
           <%#= @appt.poll_day_month %>
           <%#= @appt.time_3 %>
@@ -55,8 +55,8 @@
           <option value="Maybe">Maybe</option>
         </select>
       </div>
-
-        <%= submit_tag "Save response" %>
+      <br>
+        <%= submit_tag "Save response", class: "btn btn-success" %>
       <% end %>
   </body>
   </div>
