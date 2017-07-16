@@ -2,8 +2,8 @@ class PollsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @polls = current_user.polls.all
-    @responses = current_user.responses
+    @polls = Poll.where(admin_id: current_user.id)
+    @response_polls = current_user.polls
   end
 
   def new
@@ -15,21 +15,18 @@ class PollsController < ApplicationController
                     admin_id: current_user.id,
                     title: params[:title],
                     status: "In progress",
-                    invitee: params[:invitee],
-                    invitee2: params[:invitee2],
-                    invitee3: params[:invitee3],
-                    invitee4: params[:invitee4],
                     address: params[:address],
                     city: params[:city],
-                    state: params[:state],
-                    appt_id: params[:appt_id]
+                    state: params[:state]
                     )
+
+    @poll.invite(params[:invitees])
+
     if @poll.save
-      current_user.polls << @poll
       #current_user.save
       # we have poll.id here to send to email
       # put in email method here, passing in poll.id
-      redirect_to "/appts/new"
+      redirect_to "/appts/new?poll_id=#{@poll.id}"
     else
       flash[:warning] = "Unable to save."
       render 'new.html.erb'
@@ -70,6 +67,16 @@ class PollsController < ApplicationController
 
   def finalize
     @poll = Poll.find(params[:id])
+  end
+
+  def invite
+    @poll = Poll.find(params[:id])
+  end
+
+  def invite_create
+    @poll = Poll.find(params[:id])
+    @poll.invite(params[:invitees])
+    redirect_to "/polls"
   end
 
   # def survey

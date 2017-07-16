@@ -10,20 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170714192735) do
+ActiveRecord::Schema.define(version: 20170716161846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "appts", force: :cascade do |t|
-    t.string "scheduled_slot"
     t.integer "poll_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "scheduled_slot2"
-    t.string "scheduled_slot3"
-    t.string "scheduled_slot4"
-    t.string "chosen"
+    t.datetime "scheduled_slot"
+    t.boolean "chosen"
   end
 
   create_table "polls", force: :cascade do |t|
@@ -40,7 +37,6 @@ ActiveRecord::Schema.define(version: 20170714192735) do
     t.string "invitee2"
     t.string "invitee3"
     t.string "invitee4"
-    t.integer "appt_id"
   end
 
   create_table "responses", force: :cascade do |t|
@@ -49,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170714192735) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "answer"
-    t.integer "poll_response_id"
   end
 
   create_table "user_polls", force: :cascade do |t|
@@ -68,7 +63,6 @@ ActiveRecord::Schema.define(version: 20170714192735) do
 
   create_table "users", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"

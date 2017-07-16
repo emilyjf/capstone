@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/polls/:id/invite' => 'polls#invite'
+  post '/polls/:id/invite' => 'polls#invite_create'
+
   get '/polls/:poll_id/users' => 'polls#edit'
   post '/polls/:poll_id' => 'polls#create'
   patch '/polls/:poll_id/users' => 'polls#update'

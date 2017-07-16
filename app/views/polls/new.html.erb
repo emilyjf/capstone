@@ -21,9 +21,8 @@
           <p>State <%= select_tag :state, options_for_select(states_list, "IL") %></p>
           </div>
           <div class="form-group">
-            <%= hidden_field_tag :poll_response_id, @poll_response_id %>
-            <!-- # <%= label_tag :invitee_email %> -->
-          <p>Invitee Email <%= email_field_tag :email, nil, class: "form-control" %></p>
+          <p>please enter list of emails sepperated by a comma</p>
+          <p>Invite List <%= text_field_tag :invitees, nil, class: "form-control" %></p>
           </div>
             <%= submit_tag "Save", class: "btn btn-success" %>
         <% end %>

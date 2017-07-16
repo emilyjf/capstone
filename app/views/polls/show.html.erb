@@ -8,8 +8,15 @@
           <p>Address: <%= @poll.address %></p>
           <p>City: <%= @poll.city %></p>
           <p>State: <%= @poll.state %></p>
-          <p>Invitee: <%= @poll.invitee %></p>
-  <!--     <%= @poll.invitee %> -->
+
+          <h2>Times</h2>
+          <% @poll.appts.each do |appt| %>
+            <p><%= appt.scheduled_slot.strftime('%A - %B %e, %l:%M %p') %></p>
+          <% end %>
+          
+          <% if current_user.id == @poll.admin_id %>
+            <%= link_to "Add Appointment Option", "/appts/new?poll_id=#{@poll.id}" %>
+          <% end %>
         
      
       <p>Ready for another meeting? <%= link_to "New", new_poll_url, class: "btn btn-primary" %></p>
