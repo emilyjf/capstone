@@ -1,10 +1,28 @@
 <section>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="poll_single">
+      <div class="poll_response">
       <div>
       <h1>Here's where you choose your meeting time from users' responses</h1>
       </div>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Yes</th>
+          <th>No</th>
+          <th>Maybe</th>
+          <th></th>
+        </tr>
+        <% @poll.appts.each do |appt| %>
+          <tr>
+            <td><%= appt.friendly_slot %></td>
+            <td><%= appt.yes_count %></td>            
+            <td><%= appt.no_count %></td>            
+            <td><%= appt.maybe_count %></td> 
+            <td><%= link_to "Finalize", "/polls/#{@poll.id}/appts/#{appt.id}", method: :post %></td>           
+          </tr>
+        <% end %>
+      </table>
       <div>
       <h3>Ready for another meeting? <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></h3>
       </div>

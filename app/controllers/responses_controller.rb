@@ -18,18 +18,16 @@ class ResponsesController < ApplicationController
   end
   
   def create
-    @response = Response.new(
-                            user_id: current_user.id,
-                            appt_id: params[:appt_id],
-                            answer: params[:answer]
-                            )
-    if @response.save
-      current_user.response << @response
-      flash[:success] = "Response saved."
-      redirect_to user_url(@user.id)
-    else
-      render 'new.html.erb'
+
+    @poll = Poll.find(params[:poll_id])
+    @appt_responses = params[:appts]
+
+    @appt_responses.each do |appt_id, appt_response|
+      response = Response.find_or_create_by(user_id: current_user.id, appt_id: appt_id)
+      response.update(answer: appt_response)
     end
+
+    redirect_to "/polls"
   end
 
   def show

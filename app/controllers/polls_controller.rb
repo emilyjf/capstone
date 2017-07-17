@@ -48,17 +48,10 @@ class PollsController < ApplicationController
   def update
     poll = Poll.find(params[:id])
     poll.assign_attributes(
-                          admin_id: current_user.id,
                           title: params[:title],
-                          status: "In progress",
-                          invitee: params[:invitee],
-                          invitee2: params[:invitee2],
-                          invitee3: params[:invitee3],
-                          invitee4: params[:invitee4],
                           address: params[:address],
                           city: params[:city],
                           state: params[:state],
-                          appt_id: params[:appt_id]
                           )
     poll.save
     flash[:success] = "Changes successfully saved."
@@ -76,6 +69,16 @@ class PollsController < ApplicationController
   def invite_create
     @poll = Poll.find(params[:id])
     @poll.invite(params[:invitees])
+    redirect_to "/polls"
+  end
+
+  def choose
+    @poll = Poll.find(params[:id])
+    @appt = Appt.find(params[:appt_id])
+
+    @poll.appts.update_all(chosen: false)
+    @appt.update(chosen: true)
+
     redirect_to "/polls"
   end
 

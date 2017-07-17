@@ -18,7 +18,7 @@ class ApptsController < ApplicationController
     appt = Appt.new(
                     scheduled_slot: date,
                     poll_id: poll.id,
-                    chosen: params[:chosen]
+                    chosen: false
                     )
 
     if appt.save!
@@ -39,23 +39,26 @@ class ApptsController < ApplicationController
 
   def edit
     @appt = Appt.find(params[:id])
+    @poll = @appt.poll
   end
 
   def update
-     appt = Appt.update(
-                    scheduled_slot: params[:scheduled_slot],
-                    scheduled_slot2: params[:scheduled_slot2],
-                    scheduled_slot3: params[:scheduled_slot3],
-                    scheduled_slot4: params[:scheduled_slot4],
-                    poll_id: params[:poll_id],
-                    chosen: params[:chosen]
-                    )
-    p params[:poll_id]
-    appt.save
+    scheduled_slot = params[:scheduled_slot].first
+    time = params[:time][:started_at]
+    poll = Poll.find(params[:poll_id])
+    date = DateTime.parse(scheduled_slot + " " + time + " -05:00")
+
+    appt = Appt.find(params[:id])
+    poll = appt.poll
+    appt.update( scheduled_slot: date )
+
+    redirect_to "/polls/#{poll.id}/edit"
   end
 
-  # def destroy
-  #   appt = Appt.find(params[:id])
-  #   appt.destroy
-  #   flash[:warning] = Appointment deleted.
+  def destroy
+    @appt = Appt.find(params[:id])
+    @appt.destroy
+
+    redirect_to "/polls/#{@appt.poll.id}/edit"
+  end
 end

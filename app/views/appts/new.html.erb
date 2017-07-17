@@ -4,9 +4,9 @@
       <div class="poll_single">
       <h1>Choose Meeting Time(s)</h1>
       <h2>Enter a date for a meeting, or select dates from which your invitees can choose.</h2>
-      <div class="col-sm-4 col-sm-offset-2">
-        <%= form_tag '/appts', method: :post do %>
-          <%= hidden_field_tag :poll_id, @poll_id %>
+        <div class="col-sm-4 col-sm-offset-2">
+          <%= form_tag '/appts', method: :post do %>
+            <%= hidden_field_tag :poll_id, @poll_id %>
           <div class="form-group">
             <%= label_tag :date %>
             <%= date_field :scheduled_slot, nil, class: "form-control" %>

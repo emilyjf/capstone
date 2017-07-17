@@ -10,12 +10,13 @@ Rails.application.routes.draw do
   resources :polls do
     member do
       get 'finalize'
-      # get 'survey'
     end
   end
 
   get '/polls/:id/invite' => 'polls#invite'
   post '/polls/:id/invite' => 'polls#invite_create'
+
+  post '/polls/:id/appts/:appt_id' => 'polls#choose'
 
   get '/polls/:poll_id/users' => 'polls#edit'
   post '/polls/:poll_id' => 'polls#create'

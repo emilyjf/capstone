@@ -1,19 +1,21 @@
 <section>
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+    <div class="col-sm-6 col-sm-offset-3">
       <div class="session_single">
-        <h1>Log In</h1>
-        <%= form_tag "/login", method: :post do %>
-          <div class="form-group">
-            <%= label_tag :email %>
-            <%= email_field_tag :email, nil, class: "form-control" %>
-          </div>
-          <div class="form_group">
-            <%= label_tag :password %>
-            <%= password_field_tag :password, nil, class: "form-control" %><br>
-          </div>
-            <%= submit_tag "Log In", class: "btn btn-success" %>
-        <% end %>
+        <div class="well">
+          <h1>Log In</h1>
+          <%= form_tag "/login", method: :post do %>
+            <div class="form-group">
+              <%= label_tag :email %>
+              <%= email_field_tag :email, nil, class: "form-control" %>
+            </div>
+            <div class="form_group">
+              <%= label_tag :password %>
+              <%= password_field_tag :password, nil, class: "form-control" %><br>
+            </div>
+              <%= submit_tag "Log In", class: "btn btn-success" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

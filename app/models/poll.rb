@@ -21,4 +21,12 @@ class Poll < ApplicationRecord
       end
     end
   end
+
+  def finalized?
+    appts.where(chosen: true).any?
+  end
+
+  def final_time
+    appts.find_by(chosen: true).friendly_slot
+  end
 end

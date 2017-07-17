@@ -1,42 +1,39 @@
 <section>
   <div class="row">
     <div class="col-md-12">
-      <% if @polls.empty? %>
-        <h4>Aw, bummer! You have no meetings created yet. <%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></h4>
-      <% end %>
+       
     </div>
 
-  <div class="column-left">
-    <div class="thumbnail well">
-      <h2> Created Meetings </h2>
-        <% @polls.each do |poll| %>
-          <ul style="list-style-type:none">
-              <li><h3>                                                                              
-                  <%= link_to poll.title, "/polls/#{poll.id}", class: "title" %> <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-primary button" %>
-                  <% if poll.user.id == current_user.id %>
-                    <%= link_to "Invite", "/polls/#{poll.id}/invite", class: "btn btn-success" %>
-                    <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-success" %></h3></li>
-                <% end %>
-          </ul>
-                    
+    <div class="column-left">
+      <div class="thumbnail well">
+        <h2> Created Meetings </h2>
+        <% if @polls.empty? %>
+          <p>Aw, bummer! You have no meetings created yet.<br><%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></p>
         <% end %>
-    </div>
-  </div>
-  
-  <div class="column-right">
-    <div class="thumbnail well">
-      <h2> Your Responses </h2>
-        <% @response_polls.each do |response_poll| %>
+          <% @polls.each do |poll| %>
             <ul style="list-style-type:none">
-              <li><h3><%= response_poll.id %></h3></li>
-              <li><h3><%= link_to response_poll.title, "/polls/#{response_poll.id}" %></h3></li>
+                <li><h3>                                                                              
+                    <%= link_to poll.title, "/polls/#{poll.id}", class: "title" %> <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-warning button" %>
+                    <% if poll.user.id == current_user.id %>
+                      <%= link_to "Invite", "/polls/#{poll.id}/invite", class: "btn btn-primary" %>
+                      <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-success" %></h3></li>
+                  <% end %>
             </ul>
-            </div>
-              <%= link_to "Edit response", edit_response_url(response_poll), class: "btn btn-primary" %>
-            </div>
-          </div>
-        <% end %>
+                      
+          <% end %>
+      </div>
+    </div>
+    
+    <div class="column-right">
+      <div class="thumbnail well">
+        <h2> Your Invites </h2>
+          <ul style="list-style-type:none">
+            <% @response_polls.each do |response_poll| %>
+              <li><h3><%= response_poll.title %>
+                      <%= link_to "RSVP", "/polls/#{response_poll.id}", class: "btn btn-primary" %></h3></li>
+            <% end %>
+          </ul>
+      </div>
     </div>
   </div>
- </div>
 </section>
