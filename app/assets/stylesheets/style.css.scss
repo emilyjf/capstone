@@ -2,6 +2,25 @@ body  {
       background-image: url("sprinkles.png") ; background-size: cover;
       }
 
+.box {
+      border-radius: 25px;
+}
+
+.btn.btn-primary {
+                  font-size: 1.5rem;
+}
+
+a.btn.btn-success {
+                  font-size: 1.5rem;
+}
+
+.btn.btn-warning {
+                  font-size: 1.5rem;
+}
+
+.btn.btn-danger {
+                font-size: 1.5rem;
+}
 
 .carousel .item {
                 height: 400px;
@@ -17,6 +36,7 @@ body  {
 
 .dropdown-toggle {
                   margin: 5px 40px;
+                  font-size: 1.25em;
                   }
 
 
@@ -62,7 +82,44 @@ body  {
 .well {
       height: responsive;
       width: responsive;
+      background-color: #d0e9ea;
+      color: #000000;
+      align-self: center;
+      border-radius: 25px;
       }
+
+.well p {
+        color: #000000;
+}
+
+.border {
+        border-style: solid;
+        background-color: #000000;
+        padding: 25px;
+        align-self: center;
+        border-radius: 25px;
+}
+
+.border h3, p {
+              color: #ffffff;
+              text-align: auto;              
+}
+
+.border.border {
+                color: #ffffff;
+                text-decoration-color: #000000;
+                padding: 20px;
+}
+
+.border.border h1 {
+                  font-size: 3em;
+                  font-weight: 400;
+                  padding: 1px;
+}
+
+.box table {
+            position: center;
+}
 
 .poll_single {
               text-align: center;
@@ -72,11 +129,34 @@ body  {
                       border-collapse: collapse;
 }
 
+
 table {
   th, td {
-          border: 1px solid black;
+          border: 2px solid black;
           padding: 10px;
+          text-align: center;
+          font-weight: 400;
   }
+}
+
+table th {
+          height: 30px;
+          font-size: 1.75em;
+          background-color: #81d2df;
+
+}
+
+table td {
+          height: 50 px;
+          font-size: 1.5em;
+          background-color: #fffecc;
+}
+
+table {
+      width: 550px;
+      background-color: #ffffff;
+      margin: auto;
+
 }
 
 .div inline-block {
@@ -93,4 +173,13 @@ table {
 
 .red {
   color: red;
+}
+
+.user_single h1 {
+              
+              background-color: #000000;
+              padding: 25px;
+              align-self: center;
+              border-radius: 25px;
+
 }

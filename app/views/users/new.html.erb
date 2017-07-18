@@ -1,12 +1,15 @@
 <section>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
-        <div class="user_single">
-        <h1>Welcome to MeetMe</h1>
-        <h3>We make meeting up easy, so you can focus on fun!</h3>
-        <p>Sign up to create a meeting and invite people to your event, or just quickly respond to an invite.</p>
+        <div class="border">
+          <div class="border" style="background-color: #fff; padding: 0;">
+            <h1 style="color: #000000;">Welcome to MeetMe</h1>
+          </div>
+          <h3>We make meeting up easy, so you can focus on fun!</h3>
+          <p>Create a meeting and invite people to your event, or just quickly respond to an invite.</p>
+        </div><br>
         <div class="well">
-            <h3>Sign Up</h3>
+            <h3>Sign Up</h3><br>
               <%= form_tag '/users', method: :post do %>
               <div class="form-group">
                 <!-- # <%= label_tag :name %> -->

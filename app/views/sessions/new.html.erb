@@ -3,15 +3,13 @@
     <div class="col-sm-6 col-sm-offset-3">
       <div class="session_single">
         <div class="well">
-          <h1>Log In</h1>
+          <h1>Log In</h1><br>
           <%= form_tag "/login", method: :post do %>
             <div class="form-group">
-              <%= label_tag :email %>
-              <%= email_field_tag :email, nil, class: "form-control" %>
+              <p>Email <%= email_field_tag :email, nil, class: "form-control" %></p>
             </div>
             <div class="form_group">
-              <%= label_tag :password %>
-              <%= password_field_tag :password, nil, class: "form-control" %><br>
+              <p>Password <%= password_field_tag :password, nil, class: "form-control" %></p><br>
             </div>
               <%= submit_tag "Log In", class: "btn btn-success" %>
           <% end %>
