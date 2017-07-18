@@ -1,36 +1,32 @@
 <section>
   <div class="row">
     <div class="col-md-12">
-       
-    </div>
-
     <div class="column-left">
       <div class="thumbnail well">
-        <h2> Created Meetings </h2>
+        <h2> Meetings </h2><br>
         <% if @polls.empty? %>
-          <p>Aw, bummer! You have no meetings created yet.<br><%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></p>
+          <p>You have no meetings created yet.<br><%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></p>
         <% end %>
           <% @polls.each do |poll| %>
             <ul style="list-style-type:none">
-                <li><h3>                                                                              
+                <li><h4>                                              
                     <%= link_to poll.title, "/polls/#{poll.id}", class: "title" %> <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-warning button" %>
                     <% if poll.user.id == current_user.id %>
                       <%= link_to "Invite", "/polls/#{poll.id}/invite", class: "btn btn-primary" %>
-                      <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-success" %></h3></li>
+                      <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-success" %></h4></li>
                   <% end %>
-            </ul>
-                      
+            </ul>           
           <% end %>
       </div>
     </div>
     
     <div class="column-right">
       <div class="thumbnail well">
-        <h2> Your Invites </h2>
+        <h2> Invites </h2><br>
           <ul style="list-style-type:none">
             <% @response_polls.each do |response_poll| %>
-              <li><h3><%= response_poll.title %>
-                      <%= link_to "RSVP", "/polls/#{response_poll.id}", class: "btn btn-primary" %></h3></li>
+              <li><h4 style="font-weight: 600;"><%= response_poll.title %>
+                      <%= link_to "RSVP", "/polls/#{response_poll.id}", class: "btn btn-primary" %></h4></li>
             <% end %>
           </ul>
       </div>

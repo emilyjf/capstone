@@ -4,7 +4,7 @@
       <div class="poll_single">
         <div style="display: inline-block; text-align: left">
           <div class="well">
-            <h2>Meeting Details</h2>
+            <h3>Meeting Details</h3>
             <p>Title: <%= @poll.title %></p>
             <p>Address: <%= @poll.address %></p>
             <p>City: <%= @poll.city %></p>
@@ -17,13 +17,13 @@
                 <p>Ready for another meeting? <%= link_to "New", new_poll_url, class: "btn btn-primary" %></p>
               <% end %>
             <% else %>
-              <h2>Time(s)</h2>
+              <h3>Time(s)</h3>
               <% if current_user.id == @poll.admin_id %>
                 <% @poll.appts.each do |appt| %>
                   <p><%= appt.friendly_slot %></p>
                 <% end %>
               
-                <%= link_to "Add Appointment Option", "/appts/new?poll_id=#{@poll.id}", class: "btn btn-primary" %>
+                <%= link_to "Add Another Time Option", "/appts/new?poll_id=#{@poll.id}", class: "btn btn-primary" %>
                 <%= link_to "Review and Finalize", "/polls/#{@poll.id}/finalize", class: "btn btn-primary" %>
 
               <% else %>
