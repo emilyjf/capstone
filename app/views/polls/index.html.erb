@@ -3,7 +3,8 @@
     <div class="col-md-12">
     <div class="column-left">
       <div class="thumbnail well">
-        <h2> Meetings </h2><br>
+        <h2> Meetings You Created </h2>
+        <p>Click on a meeting name to view its details.</p>
         <% if @polls.empty? %>
           <p>You have no meetings created yet.<br><%= link_to "Create meeting", new_poll_url, class: "btn btn-primary" %></p>
         <% end %>
@@ -22,7 +23,7 @@
     
     <div class="column-right">
       <div class="thumbnail well">
-        <h2> Invites </h2><br>
+        <h2> You've Been Invited </h2><br>
           <ul style="list-style-type:none">
             <% @response_polls.each do |response_poll| %>
               <li><h4 style="font-weight: 600;"><%= response_poll.title %>

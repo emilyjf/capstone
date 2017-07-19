@@ -79,7 +79,7 @@ class PollsController < ApplicationController
     @poll.appts.update_all(chosen: false)
     @appt.update(chosen: true)
 
-    flash[:success] = "QQQQQQQQQ"
+    flash[:success] = "Meeting time successfully finalized. We're emailing your invitees now."
     redirect_to "/polls"
   end
 

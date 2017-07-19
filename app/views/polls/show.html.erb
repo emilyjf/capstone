@@ -9,6 +9,7 @@
             <p>Address: <%= @poll.address %></p>
             <p>City: <%= @poll.city %></p>
             <p>State: <%= @poll.state %></p>
+            <p>Invitees: <%= @poll.invitee %></p>
             
             <% if @poll.finalized? %>
               <h2 class="red"><%= @poll.final_time %></h2>
@@ -24,7 +25,7 @@
                 <% end %>
               
                 <%= link_to "Add Another Time Option", "/appts/new?poll_id=#{@poll.id}", class: "btn btn-primary" %>
-                <%= link_to "Review and Finalize", "/polls/#{@poll.id}/finalize", class: "btn btn-primary" %>
+                <%= link_to "View Responses", "/polls/#{@poll.id}/finalize", class: "btn btn-primary" %>
 
               <% else %>
                 <%= form_tag "/responses", method: :post do %>
