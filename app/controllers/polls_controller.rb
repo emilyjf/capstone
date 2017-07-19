@@ -79,6 +79,7 @@ class PollsController < ApplicationController
     @poll.appts.update_all(chosen: false)
     @appt.update(chosen: true)
 
+    flash[:success] = "QQQQQQQQQ"
     redirect_to "/polls"
   end
 

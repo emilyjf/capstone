@@ -2,24 +2,24 @@
   <div class="row">
   <div class="col-sm-8 col-sm-offset-2">
     <div class="poll_single">
-      <div style="display: inline-block; text-align: left;">
+      <!-- <div style="display: inline-block; text-align: left;"> -->
         <div class="well">
           <h2>Choose Meeting Time(s)</h2>
           <p>Enter a date for a meeting, or select dates from which your invitees can choose.</p>
-            <div class="col-sm-4 col-sm-offset-2">
+            <!-- <div class="col-sm-4 col-sm-offset-2"> -->
               <%= form_tag '/appts', method: :post do %>
                 <%= hidden_field_tag :poll_id, @poll_id %>
               <div class="form-group">
-                <p>Date <%= date_field :scheduled_slot, nil, class: "form-control" %></p>    
+                <p>Date <%= date_field :scheduled_slot, nil %></p>    
                 <p>Time <%= time_field :time, :started_at %></p>
                 <%= submit_tag "Save or select more times", class: "btn btn-success" %>
               <% end %>
                 </br>
               </div>
-            </div>
+            <!-- </div> -->
           </div>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </div>
 </section>

@@ -65,7 +65,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login<span class="caret caret-right"></span></a>
                    
                     <ul class="dropdown-menu">
                         <li><a href="/login">Login</a></li>
@@ -117,7 +117,9 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <%= image_tag 'meeting4.jpg', class: 'img-responsive' %>
+                                <div style='border-radius: 25px; overflow:hidden;'>
+                                    <%= image_tag 'meeting4.jpg', class: 'img-responsive'%>
+                                </div>
                             </div>
                             <div class="item">
                                 <%= image_tag 'meeting2.jpg', class: 'img-responsive' %>
@@ -207,9 +209,9 @@
 
     <!-- Script to Activate the Carousel -->
     <script>
-    $('.carousel').carousel({
-        interval: 10000 //changes the speed
-    })
+    // $('.carousel').carousel({
+    //     interval: 10000 //changes the speed
+    // })
     </script>
 
 </body>

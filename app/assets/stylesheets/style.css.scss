@@ -55,6 +55,7 @@ a.btn.btn-success {
 .column-left title {
                     width: 40%;
                     float: left;
+
                     }
 
 .column-left button {
@@ -64,6 +65,10 @@ a.btn.btn-success {
 
 .column-left h2 {
                 text-align: center;
+                }
+
+.column-left h4 {
+                text-align: left;
                 }
 
 .column-gap {
@@ -78,8 +83,13 @@ a.btn.btn-success {
               padding-bottom: 20px;
               }
 
-.column-right h2, h4 {
+.column-right h2 {
                   text-align: center;
+                  }
+
+.column-right h4 {
+                  text-align: center;
+                  color: #000000;
                   }
 
 .well {
