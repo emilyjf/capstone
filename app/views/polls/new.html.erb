@@ -22,7 +22,7 @@
             <p>State <%= select_tag :state, options_for_select(states_list, "IL") %></p>
             </div><br>
             <div class="form-group">
-            <p>Please enter a list of emails separated by commas.</p>
+            <p>Please enter a emails separated by commas.</p>
             <p>Invite List <%= text_field_tag :invitees, nil, class: "form-control" %></p>
             </div>
               <%= submit_tag "Save", class: "btn btn-success" %>
