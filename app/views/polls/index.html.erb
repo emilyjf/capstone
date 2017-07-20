@@ -14,7 +14,7 @@
                     <%= link_to poll.title, "/polls/#{poll.id}", class: "title" %> <%= link_to "Edit", edit_poll_url(poll), class: "btn btn-warning button" %>
                     <% if poll.user.id == current_user.id %>
                       <%= link_to "Invite", "/polls/#{poll.id}/invite", class: "btn btn-primary" %>
-                      <%= link_to "Finalize", "/polls/#{poll.id}/finalize", class: "btn btn-success" %></h4></li>
+                      <%= link_to "Responses", "/polls/#{poll.id}/finalize", class: "btn btn-success" %></h4></li>
                   <% end %>
             </ul>           
           <% end %>
