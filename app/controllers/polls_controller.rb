@@ -19,13 +19,11 @@ class PollsController < ApplicationController
                     city: params[:city],
                     state: params[:state]
                     )
-
-    @poll.invite(params[:invitees])
-
     if @poll.save
       #current_user.save
       # we have poll.id here to send to email
       # put in email method here, passing in poll.id
+      @poll.invite(params[:invitees])
       redirect_to "/appts/new?poll_id=#{@poll.id}"
     else
       flash[:warning] = "Unable to save."

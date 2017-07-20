@@ -17,7 +17,7 @@ class Poll < ApplicationRecord
       user = User.find_by(email: email)
 
       if user
-        Userpoll.find_or_create_by(user_id: user.id, poll_id: id)
+        Userpoll.find_or_create_by!(user_id: user.id, poll_id: id)
       end
     end
   end
