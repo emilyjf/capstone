@@ -106,8 +106,18 @@ a.btn.btn-success {
 }
 
 .well h1 {
-          background-color: #95dee3;
+          background-color: #898e8c;
           font-weight: 600;
+}
+
+.well .edit h1 {
+          background-color: #898e8c;
+          font-weight: 600;
+          color: #ffffff;
+}
+
+.form-group .bullet li {
+                        color: #000000;
 }
 
 .well h3, p {

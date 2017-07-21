@@ -3,12 +3,16 @@
     <div class="col-sm-8 col-sm-offset-2">
       <div class="user_single">
         <div class="well">
+          <div class="edit">
             <h1>Edit Meeting</h1>
+            </div>
+            <p>Make changes to details about your meeting, delete time options, add invitees, or delete the meeting.</p>
             <div class="form-group">
               <p>Times</p>
               <ul>
                 <% @poll.appts.each do |appt| %>
-                  <li><%= link_to appt.friendly_slot + " - destroy", "/appts/#{appt.id}", method: :delete %></li>
+                <div class="bullet">
+                  <li><p><%= link_to appt.friendly_slot + " - Delete", "/appts/#{appt.id}", {method: :delete } %></p></li></div>
                 <% end %>
               </ul>
             </div>
@@ -45,7 +49,7 @@
           
          <!--  <input type="submit" value="Save Changes">  --> 
               <% if @poll.user.id == current_user.id %>
-                <%= link_to "Delete", "/polls/#{@poll.id}", {method: :delete,  class: "btn btn-danger" }%>
+                <%= link_to "Delete Meeting", "/polls/#{@poll.id}", {method: :delete,  class: "btn btn-danger" }%>
               <% end %>
             <% end %>
           </div>
