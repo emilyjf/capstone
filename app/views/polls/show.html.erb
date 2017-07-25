@@ -9,7 +9,11 @@
             <p>Address: <%= @poll.address %></p>
             <p>City: <%= @poll.city %></p>
             <p>State: <%= @poll.state %></p>
-           
+    
+            <div class="form-group">
+                <%= hidden_field_tag :poll_response_id, @poll_response_id %>
+              <p>Invitee List: <%= email_field_tag :email, @poll.user.email, class: "form-control" %></p>
+            </div>
             
             <% if @poll.finalized? %>
               <h2 class="red"><%= @poll.final_time %></h2>
@@ -24,7 +28,7 @@
                   <p><%= appt.friendly_slot %></p>
                 <% end %>
               
-                <%= link_to "Add Another Time Option", "/appts/new?poll_id=#{@poll.id}", class: "btn btn-primary" %>
+                <%= link_to "Add Another Time Option", "/appts/new?poll_id=#{@poll.id}", class: "btn btn-warning" %>
                 <%= link_to "View Responses", "/polls/#{@poll.id}/finalize", class: "btn btn-primary" %>
 
               <% else %>
