@@ -8,7 +8,7 @@
         <%= form_tag '/appts', method: :patch do %>
           <% hidden_field_tag :poll_id, @poll.id %>
           <div class="form-group">
-            <%= label_tag :date%>
+            <%= label_tag :date %>
             <%= date_field :scheduled_slot, @appt.scheduled_slot, class: "form-control" %>
           </div>
           <div>
