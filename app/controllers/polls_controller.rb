@@ -70,6 +70,14 @@ class PollsController < ApplicationController
     redirect_to "/polls"
   end
 
+  def invite_update
+    @poll = Poll.find(params[:id])
+    @poll.invite(params[:invitees])
+
+    flash[:success] = "Invitee(s) successfully added."
+    redirect_to "/polls"
+  end
+
   def choose
     @poll = Poll.find(params[:id])
     @appt = Appt.find(params[:appt_id])

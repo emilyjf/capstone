@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   get '/polls/:id/invite' => 'polls#invite'
   post '/polls/:id/invite' => 'polls#invite_create'
+  patch '/polls/:id/invite' => 'polls#invite_update'
 
   post '/polls/:id/appts/:appt_id' => 'polls#choose'
 

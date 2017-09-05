@@ -1,8 +1,8 @@
 <h1>Invite more people</h1>
 
-<%= form_tag "/polls/#{@poll.id}/invite", method: :post do %>
-  <div class="form-group">
-  <p>please enter list of emails sepperated by a comma</p>
+<%= form_tag "/polls/#{@poll.id}/invite", method: :patch do %>
+<div class="form-group">
+  <p>Please enter a list of emails separated by commas.</p>
   <p>Invite List <%= text_field_tag :invitees, nil, class: "form-control" %></p>
   </div>
     <%= submit_tag "Save", class: "btn btn-success" %>
