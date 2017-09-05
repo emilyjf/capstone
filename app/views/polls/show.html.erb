@@ -1,10 +1,9 @@
 <section>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <div class="poll_single">
-        <!-- <div style="display: inline-block; text-align: left"> -->
-          <div class="well">
-            <h3>Meeting Details</h3>
+      <div class="user_single">
+        <div class="well">
+            <h1 style="color: #ffffff;">Meeting Details</h1>
             <p>Title: <%= @poll.title %></p>
             <p>Address: <%= @poll.address %></p>
             <p>City: <%= @poll.city %></p>
@@ -16,8 +15,8 @@
             </div>
             
             <% if @poll.finalized? %>
-              <h2 class="red"><%= @poll.final_time %></h2>
-              <br>
+              <h3 class="red"><%= @poll.final_time %></h3>
+              <p>This meeting time has been finalized.</p>
               <% if current_user.id == @poll.admin_id %>
                 <p>Ready for another meeting? <%= link_to "New", new_poll_url, class: "btn btn-primary" %></p>
               <% end %>
@@ -51,7 +50,6 @@
               <% end %>
             <% end %>
           </div>
-        <!-- </div> -->
       </div>
     </div>
   </div>

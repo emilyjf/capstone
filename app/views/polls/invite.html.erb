@@ -1,9 +1,18 @@
-<h1>Invite more people</h1>
-
-<%= form_tag "/polls/#{@poll.id}/invite", method: :patch do %>
-<div class="form-group">
-  <p>Please enter a list of emails separated by commas.</p>
-  <p>Invite List <%= text_field_tag :invitees, nil, class: "form-control" %></p>
+<section>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="user_single">
+        <div class="well">
+          <h1 style="color: #ffffff;">Invite More People</h1>
+            <%= form_tag "/polls/#{@poll.id}/invite", method: :patch do %>
+            <div class="form-group">
+              <p>Please enter a list of emails separated by commas.</p>
+              <p>Add to Invite List <%= text_field_tag :invitees, nil, class: "form-control" %></p>
+              </div>
+                <%= submit_tag "Save", class: "btn btn-success" %>
+            <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-    <%= submit_tag "Save", class: "btn btn-success" %>
-<% end %>
+</section>
