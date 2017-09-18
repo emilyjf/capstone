@@ -8788,6 +8788,495 @@ button.close {
     display: none !important;
   }
 }
+/*!
+ * Start Bootstrap - Business Casual (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+
+body {
+    font-family: 'Raleway', sans-serif, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url('../img/bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /*text-transform: uppercase;*/
+    font-family: font-family: 'Raleway', sans-serif, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+
+p {
+    font-size: 1.25em;
+    line-height: 1.6;
+    color: #000;
+}
+
+hr {
+    max-width: 400px;
+    border-color: #999999;
+}
+
+.brand,
+.address-bar {
+    display: none;
+}
+
+.navbar-brand {
+    font-family: 'Raleway', sans-serif, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 000;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    font-family: 'Raleway', sans-serif, "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.img-full {
+    min-width: 100%;
+}
+
+.brand-before,
+.brand-name {
+    /*text-transform: capitalize;*/
+}
+
+.brand-before {
+    margin: 15px 0;
+}
+
+.brand-name {
+    margin: 0;
+    font-size: 4em;
+}
+
+.tagline-divider {
+    margin: 15px auto 3px;
+    max-width: 250px;
+    border-color: #999999;
+}
+
+.box {
+    margin-bottom: 20px;
+    padding: 30px 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
+.intro-text {
+    /*text-transform: uppercase;*/
+    font-size: 1.25em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.img-border {
+    float: none;
+    margin: 0 auto 0;
+    border: #999999 solid 1px;
+}
+
+.img-left {
+    float: none;
+    margin: 0 auto 0;
+}
+
+footer {
+    background: #fff;
+    background: rgba(255,255,255,0.9);
+}
+
+footer p {
+    margin: 0;
+    padding: 50px 0;
+}
+
+@media screen and (min-width:768px) {
+    .brand {
+        display: inherit;
+        margin: 0;
+        padding: 20px 0 10px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        font-family: 'Raleway', sans-serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 5em;
+        font-weight: 700;
+        line-height: normal;
+        color: #fff;
+    }
+
+    .top-divider {
+        margin-top: 0;
+    }
+
+    .img-left {
+        float: left;
+        margin-right: 25px;
+    }
+
+    .address-bar {
+        display: inherit;
+        margin: 0;
+        padding: 0 0 40px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        text-transform: uppercase;
+        font-size: 1.25em;
+        font-weight: 400;
+        letter-spacing: 3px;
+        color: #fff;
+    }
+
+    .navbar {
+        border-radius: 0;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+
+    .navbar {
+        min-height: 0;
+    }
+
+    .navbar-default {
+        border: none;
+        background: #fff;
+        background: rgba(255,255,255,0.9);
+    }
+
+    .nav>li>a {
+        top-padding: 5px;
+        bottom-padding: 5px;
+    }
+
+  
+    .navbar-nav>li>a {
+        line-height: normal;
+    }
+
+    .navbar-nav {
+        display: table;
+        float: none;
+        margin: 0 auto;
+        table-layout: fixed;
+        font-size: 1.25em;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .box:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+/* line 1, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+body {
+  background-image: url("sprinkles.png");
+  background-size: cover;
+}
+
+/* line 5, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.box {
+  border-radius: 25px;
+}
+
+/* line 9, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.btn.btn-primary {
+  font-size: 1.5rem;
+}
+
+/* line 13, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+a.btn.btn-success {
+  font-size: 1.5rem;
+}
+
+/* line 17, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.btn.btn-warning {
+  font-size: 1.5rem;
+}
+
+/* line 21, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.btn.btn-danger {
+  font-size: 1.5rem;
+}
+
+/* line 25, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.carousel .item {
+  height: 400px;
+  margin: 0 auto;
+}
+
+/* line 30, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 330px;
+}
+
+/* line 37, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.dropdown-toggle {
+  margin: 5px 40px;
+  font-size: 1.25em;
+}
+
+/* line 42, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.dropdown-menu a {
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+/* line 47, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-left {
+  width: 48%;
+  float: left;
+  padding-left: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* line 55, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-left title {
+  width: 40%;
+  float: left;
+}
+
+/* line 61, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-left button {
+  width: 40%;
+  float: right;
+}
+
+/* line 66, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-left h2 {
+  text-align: center;
+}
+
+/* line 70, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-left h4 {
+  text-align: left;
+}
+
+/* line 74, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-gap {
+  width: 10px;
+}
+
+/* line 78, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-right {
+  width: 48%;
+  float: right;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* line 86, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-right h2 {
+  text-align: center;
+}
+
+/* line 90, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.column-right h4 {
+  text-align: center;
+  color: #000000;
+}
+
+/* line 95, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.well {
+  height: responsive;
+  width: responsive;
+  background-color: #95dee3;
+  color: #000000;
+  align-self: auto;
+  border-radius: 25px;
+}
+
+/* line 104, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.well p {
+  color: #000000;
+}
+
+/* line 108, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.well h1 {
+  background-color: #898e8c;
+  font-weight: 600;
+}
+
+/* line 113, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.well .edit h1 {
+  background-color: #898e8c;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* line 119, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.form-group .bullet li {
+  color: #000000;
+}
+
+/* line 123, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.well h3, p {
+  font-weight: 600;
+}
+
+/* line 127, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.thumbnail.well h1, h2 {
+  font-weight: 600;
+  border-width: 3px;
+  background-color: #898e8c;
+  border-radius: 17px;
+  padding: 7px;
+  color: #ffffff;
+}
+
+/* line 136, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.thumbnail.well h4 {
+  font-weight: 600;
+}
+
+/* line 140, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.border {
+  border-style: solid;
+  background-color: #898e8c;
+  padding: 25px;
+  align-self: center;
+  border-radius: 25px;
+}
+
+/* line 148, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.border h3, p {
+  color: #ffffff;
+  text-align: auto;
+}
+
+/* line 153, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.border.border {
+  color: #ffffff;
+  text-decoration-color: #000000;
+  padding: 20px;
+}
+
+/* line 159, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.border.border h1 {
+  font-size: 3em;
+  font-weight: 400;
+  padding: 1px;
+}
+
+/* line 165, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.box table {
+  position: center;
+}
+
+/* line 169, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.poll_single h2, h3 {
+  font-weight: 600;
+}
+
+/* line 173, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.poll_response th, td {
+  border-collapse: collapse;
+}
+
+/* line 178, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+table th, table td {
+  border: 4px solid black;
+  padding: 10px;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* line 186, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+table th {
+  height: 30px;
+  font-size: 1.75em;
+  background-color: #fffecc;
+}
+
+/* line 193, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+table td {
+  height: 50 px;
+  font-size: 1.5em;
+  background-color: #ffffff;
+}
+
+/* line 199, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+table {
+  width: 550px;
+  background-color: #ffffff;
+  margin: auto;
+}
+
+/* line 206, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.div inline-block {
+  text-align: left;
+}
+
+/* line 210, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.contact {
+  text-align: center;
+}
+
+/* line 214, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.contact h2, p {
+  text-align: left;
+}
+
+/* line 218, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.red {
+  color: red;
+  text-align: left;
+}
+
+/* line 223, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.user_single {
+  text-align: center;
+}
+
+/* line 227, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.user_single h1 {
+  background-color: #898e8c;
+  padding: 25px;
+  align-self: center;
+  border-radius: 25px;
+}
+
+/* line 234, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.about h2 {
+  font-weight: 600;
+}
+
+/* line 238, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.fun .well {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #898e8c;
+  background-color: #898e8c;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 248, /Users/emily/Desktop/Actualize/capstone/app/assets/stylesheets/style.css.scss */
+.fun .well p, li {
+  color: #ffffff;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -8804,5 +9293,4 @@ button.close {
 
  */
 
-@import "bootstrap-sprockets"
-@import "bootstrap"
+
