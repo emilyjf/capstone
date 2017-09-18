@@ -281,5 +281,6 @@ Userpoll.create!([
   {user_id: 1, poll_id: 111},
   {user_id: 1, poll_id: 112},
   {user_id: 1, poll_id: 113},
-  {user_id: 1, poll_id: 114}
+  {user_id: 1, poll_id: 114},
+  {user_id: 1, poll_id: 115}
 ])
